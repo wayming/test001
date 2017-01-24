@@ -1,18 +1,22 @@
 import React, { PropTypes } from 'react'
+import Rectangle from './Rectangle'
 
-export default class SVG extends React.Component {
-    render() {
-        return (
-<div>
-<h1> mysvg </h1>
-<button onClick={onClick}> add component </button>
-</div>
-        );
-    }
-
-}
+const SVG = ({ recs }) => (
+  <SVG>
+    {recs.map(rec =>
+      <Rectangle
+        x={rec.x}
+        y={rec.y}
+      />
+    )}
+  </SVG>
+)
 
 SVG.propTypes = {
-  text: PropTypes.string
+  recs: PropTypes.arrayOf(PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
+  }).isRequired).isRequired
 }
 
+export default SVG

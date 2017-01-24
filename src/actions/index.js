@@ -15,10 +15,10 @@ export const toggleTodo = (id) => ({
   id
 })
 
-export const addRec = (attrs) => (
+export const addRec = (x, y) => (
   {
     type: 'ADD_REC',
-    x: attrs.x,
-    y: attrs.y
+    x: x,
+    y: y
   }
 )
